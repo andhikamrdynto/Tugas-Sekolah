@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bangun Datar</title>
+</head>
+<body>
+    <script>
+       var pilihan = prompt("masukkan luas bangun datar(persegi, persegi panjang, segitiga dan trapesium)")
+       switch (pilihan) {
+            //    luas persegi
+           case "persegi":
+              function cetak() {
+                  var sisi1 = prompt("masukkan sisi");
+                  var sisi2 = prompt("masukkan sisi");
+                  var hasil = sisi1 * sisi2;
+                  document.write("Luas = ", sisi1 ," x ",sisi2 ," = ",hasil );   
+              }
+
+              cetak()
+               break;
+            //    luas persegi panjang
+           case "persegi panjang":
+               function cetak1() {
+                   var p = prompt("masukkan panjang");
+                   var l = prompt("masukkan lebar");
+                   var hasil1 = p*l;
+                   document.write("Luas = ",p ," x ",l ," = ",hasil1);
+               }
+
+               cetak1()
+               break;
+            //    luas segitiga
+           case "segitiga":
+               function cetak2() {
+                   var a = prompt ("masukkan alas");
+                   var t = prompt ("masukkan tinggi");
+                   var luas = 1/2*a*t;
+                   document.write ("luas = ", "½ ", " x " ,a , " x " ,t , " = " ,luas);
+               }   
+
+               cetak2()
+               break;
+           case "trapesium":
+               function cetak3() {
+                   var a = prompt ("masukkan alas a");
+                   var b = prompt ("masukkan alas b");
+                   var t = prompt ("masukkan tinggi");
+                   var luas = parseInt(a)+parseInt(b);
+                   var jadi = luas * t;
+                   var hasil = 1/2 * jadi;
+                   document.write ("luas = ", "½ " , " x ", "(", a , " + ", b,")","x ",t, "</br>");
+                   document.write ("= ","½ "," x ", luas , " x ",t , "</br>");
+                   document.write ("= ","½ " ," x " , jadi , "</br>");
+                   document.write ("= ", hasil);
+               }
+
+               cetak3()
+               break;
+       }
+    </script>
+</body>
+</html>
