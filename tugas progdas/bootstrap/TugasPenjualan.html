@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
-    <title>Penjualan</title>
+    <title>Tugas Penjualan</title>
     <style>
         .jumbotron{
             height: 450px;
@@ -22,6 +22,7 @@
             color: snow;
             font-family: Franklin Gothic Medium;
         }
+        
     </style>
 </head>
 <body>
@@ -65,18 +66,16 @@
 
                 </div>
     
-                <button type="button" class="btn btn-primary btn-block mt-2" data-toggle="modal" data-target="#exampleModal">
+                <button type="button" class="btn btn-warning btn-block mt-2" data-toggle="modal" data-target="#exampleModal">
                     Bayar
                 </button>
                   
     
             </div>
-    
             <div class="col-8" id="listproduk">
-                    <!-- list product -->
     
             </div>
-       
+
         </div>
     </div>
   
@@ -92,7 +91,7 @@
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                    <button type="button" class="btn btn-primary" onclick="bencet()" data-dismiss="modal">Bayar</button>
+                    <button type="button" class="btn btn-warning" onclick="bencet()" data-dismiss="modal">Bayar</button>
                 </div>
             </div>
         </div>
@@ -102,13 +101,15 @@
     <script>
 
 
-        var namabarang = ['Jaket Sweater Hoodie Polos', 'Crewneck Polos', 'Kemeja Lengan Pendek', 'Kaos']
-        var hargabarang = [120000,75000,105000,50000]
+        var namabarang = ['Jaket Sweater Hoodie Polos', 'Crewneck Polos', 'Kemeja Lengan Pendek', 'Kaos Polos','Jaket Sukajan','Baju Koko']
+        var hargabarang = [120000,75000,105000,50000,580000,170000]
         var gambarbarang = [
             "https://images.tokopedia.net/img/cache/900/VqbcmM/2021/2/11/5930d2bd-b63a-48af-8b0a-d6b86d91252b.jpg",
             "https://images.tokopedia.net/img/cache/900/VqbcmM/2020/10/16/2d94fe96-0922-4667-b6e0-08b3d399f83d.jpg",
             "https://images.tokopedia.net/img/cache/900/product-1/2020/8/12/416371456/416371456_14f123aa-79b7-40b9-b8c8-b6f54ba0770d_2048_2048.jpg",
-            "https://images.tokopedia.net/img/cache/900/VqbcmM/2021/1/9/f5e7a66e-e5b6-444c-80df-d776b2e9ebc2.jpg"
+            "https://images.tokopedia.net/img/cache/900/VqbcmM/2021/1/9/f5e7a66e-e5b6-444c-80df-d776b2e9ebc2.jpg",
+            "https://images.tokopedia.net/img/cache/900/VqbcmM/2020/12/20/2c77117c-6e51-4828-b4ea-0e3f72a42942.jpg",
+            "https://images.tokopedia.net/img/cache/900/product-1/2020/8/27/718793910/718793910_d7eac297-061f-4f7c-8e16-2e50daf66a23_1280_1280.jpg"
 
         ]
 
@@ -119,12 +120,13 @@
         function showlistproduk() {
             listproduk.innerHTML =''
                 for (let i = 0; i < namabarang.length; i++) {
-                    listproduk.innerHTML +='<div class="card float-left mr-3 mb-3" style="width: 14rem;">'+
+                    listproduk.innerHTML += 
+                    '<div class="card float-left ml-1 mr-2 mb-3" style="width: 14rem;">'+
                     '<img src="'+gambarbarang[i]+'"class="card-img-top" alt="...">'+
                     '<div class="card-body">'+
                       '<h5 class="card-title" style="font-size: 15px; height: 30px;">'+namabarang[i]+'</h5>'+
                       '<p class="card-text" style="color: red;">Rp. '+hargabarang[i]+'</p>'+
-                      '<a href="#" class="btn btn-primary" onclick="addlistitem('+i+')">Beli</a>'+
+                      '<a href="#pakaian" class="btn btn-warning" onclick="addlistitem('+i+')">Beli</a>'+
                     '</div>'+
                     '</div>'
                     
@@ -154,9 +156,9 @@
             var hargatotal = 0
             var totalbayar = 0
             for (let i = 0; i < namabarang_keranjang.length; i++) {
-                listkeranjang.innerHTML +='<div class="card mt-3" style="width: 22rem;">'+
+                listkeranjang.innerHTML +='<div class="card mt-3" style="width: 100%;">'+
                         '<div class="card-body">'+
-                          '<h5 class="card-title">'+namabarang_keranjang[i]+'</h5>'+
+                          '<h5 class="card-title" id="pakaian">'+namabarang_keranjang[i]+'</h5>'+
                           '<p class="card-text">'+hargabarang_keranjang[i]+'</p>'+
                           '<p>Qty : 1</p>'+
                           '<a href="#" class="btn btn-danger float-right" onclick="deleteitem('+i+')">Hapus</a>'+
